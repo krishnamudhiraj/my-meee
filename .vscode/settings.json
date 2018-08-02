@@ -1,0 +1,30 @@
+{
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.formatOnSave": true
+  },
+
+  "prettier.eslintIntegration": true,
+  "prettier.bracketSpacing": true,
+  "prettier.semi": true,
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.minimap.enabled": false,
+  "javascript.format.enable": true,
+  "javascript.validate.enable": false,
+}
