@@ -24,7 +24,7 @@ my-app/
       registerServiceWorker.js
 ```
 
-##Run Project
+## Run Project
 
 In the project directory, you can run:
 
