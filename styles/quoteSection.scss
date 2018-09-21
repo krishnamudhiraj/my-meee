@@ -1,0 +1,16 @@
+.quote-section {
+    background-color: #27B6F2;
+
+    .quote-section-container {
+        display: flex;
+        padding: 80px 15%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 767px) {
+        .quote-section-container {
+            padding: 60px 5%;
+        }
+    }
+}

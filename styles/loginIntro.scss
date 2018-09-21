@@ -1,0 +1,83 @@
+.login-intro {
+  background-color: #FFEC00;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .login-intro-content {
+    width: 470px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .meee-image {
+      margin: 5px;
+    }
+    .box-text {
+      margin: 5px;
+      width: auto;
+      border: 1px solid #1B1B1B;
+      border-radius: 8px;
+      text-align: center;
+      padding: 5px;
+      .text-values-body {
+        font-family: 'GothamNarrow-Book';
+        font-size: 18px;
+        color: #1B1B1B;
+        margin: 5px;
+      }
+    }
+    .input-btn {
+      margin: 5px;
+      button {
+        height: 50px;
+        width: 330px;
+        background-color: #009EE2;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 10px;
+        font-family: 'GothamNarrow-Book';
+        font-size: 18px;
+        color: white;
+        margin: 0px;
+        text-align: center;
+        border: none;
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+      }
+      .next-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-intro {
+    .login-intro-content {
+      height: 100%;
+      width: auto;
+      padding: 15px;
+      .input-btn {
+        width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+      .next-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .next-arrow {
+          margin-left: 10px;
+          margin-bottom: 2px
+        }
+      }
+    }
+  }
+}

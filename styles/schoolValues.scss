@@ -1,0 +1,86 @@
+.school-values {
+  background-color: #E5007D;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .school-values-content {
+    width: 470px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .meee-image {
+      margin: 25px 0px;
+    }
+    .text-values-title {
+      font-family: 'GothamNarrow-Book';
+      font-size: 30px;
+      color: white;
+      margin: 0px;
+      margin: 25px 5px 10px 5px;
+    }
+    .text-values-title-sm {
+      font-family: 'GothamNarrow-Book';
+      font-size: 22px;
+      color: white;
+      margin: 0px;
+      margin: 25px 5px 10px 5px;
+    }
+    .text-values-body {
+      font-family: 'GothamNarrow-Book';
+      font-size: 18px;
+      color: white;
+      margin: 0px;
+      margin: 5px;
+    }
+    .box-text {
+      margin: 40px 5px 10px 5px;
+      width: auto;
+      border: 1px solid white;
+      border-radius: 8px;
+      text-align: center;
+      padding: 5px;
+    }
+    .input-btn {
+      margin: 20px 5px;
+      button {
+        height: 50px;
+        width: 347px;
+        background-color: #009EE2;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 10px;
+        font-family: 'GothamNarrow-Book';
+        font-size: 18px;
+        color: white;
+        margin: 0px;
+        text-align: center;
+        border: none;
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .school-values {
+    .school-values-content {
+      width: auto;
+      justify-content: unset;
+      padding: 15px;
+      .input-btn {
+        button {
+          width: auto;
+          height: auto;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

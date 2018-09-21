@@ -1,0 +1,15 @@
+.selected-cards-list {
+    background-color: white;
+    padding: 125px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text-section-h1 {
+        color: black;
+    }
+
+    .text-body {
+        color: black;
+    }
+}

@@ -1,0 +1,64 @@
+.get-statred-width-cards-section {
+    background-color: white;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .get-statred-width-cards-row {
+        .col-no-padding {
+            padding-left: 0px;
+            padding-right: 0px;
+            .float-left {
+                float: left;
+            }
+            .float-right {
+                float: right;
+            }
+        }
+        .get-started-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .body-title {
+                font-size: 36px;
+                line-height: 36px;
+                text-align: center;
+                font-family: 'GothamNarrow-Book';
+                margin: 20px 0px;
+            }
+            .signup-text {
+                font-size: 18px;
+                line-height: 18px;
+                text-align: center;
+                font-family: 'GothamNarrow-Book';
+                margin: 20px 0px;
+            }
+            .btn-theme {
+                margin: 10px 0px;
+                width: 400px;
+                border-radius: 25px;
+                box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+                .button-theme {
+                    box-shadow: none;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                    .btn-theme {
+                        width: 330px;
+                    }
+            }
+
+            @media screen and (max-width: 767px) {
+                    .btn-theme {
+                        width: 100%;
+                    }
+            }
+            .button-transparent {
+                margin: 10px 0px;
+            }
+        }
+    }
+}

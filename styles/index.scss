@@ -1,0 +1,52 @@
+/* Fonts */
+@import url("./fonts.scss");
+
+/* COMPONENTS */
+@import url("./header.scss");
+@import url("./textSection.scss");
+@import url("./buttonTheme.scss");
+@import url("./buttonTransparent.scss");
+@import url("./quoteSection.scss");
+@import url("./inputTheme.scss");
+@import url("./welcomeMee.scss");
+@import url("./cardsScreenLayout.scss");
+@import url("./cardsScreenHeader.scss");
+@import url("./cardsList.scss");
+@import url("./selectedCardsList.scss");
+@import url("./card.scss");
+@import url("./loader.scss");
+@import url("./paymentSuccessModal.scss");
+
+/* Public */
+@import url("./home.scss");
+@import url("./signup.scss");
+@import url("./paymentSuccess.scss");
+@import url("./getStarted.scss");
+@import url("./whatAreValues.scss");
+@import url("./cardsCarousel.scss");
+@import url("./valuesCards.scss");
+@import url("./pickFiveIntro.scss");
+@import url("./payment.scss");
+@import url("./downloadPdf.scss");
+
+/* School */
+@import url("./school.scss");
+@import url("./schoolValues.scss");
+@import url("./loginIntro.scss");
+@import url("./selectSchool.scss");
+@import url("./userDetails.scss");
+@import url("./generateCodes.scss");
+
+body {
+    background-color: #fafafa;
+}
+button:focus {
+    outline: none;
+}
+a:focus, a:hover {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+
+

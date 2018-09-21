@@ -1,0 +1,38 @@
+.makes-me-section {
+    background-color: #FFE831;
+    padding: 80px 0px;
+
+    .makes-me-section-row {
+        margin: 0 6%;
+        display: flex;
+        align-items: center;
+
+        p {
+            color: black;
+        }
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .makes-me-section-row {
+            margin: 0 6%;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .makes-me-section-row {
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .makes-me-section-row {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .makes-me-section {
+        padding: 40px 0px;
+    }
+}

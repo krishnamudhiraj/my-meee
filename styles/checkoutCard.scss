@@ -1,0 +1,116 @@
+.signup-view {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .checkout-card-started {
+    position: absolute;
+    top: -50px;
+    background-color: white;
+    width: 40%;
+    height: 440px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+    padding: 40px 50px;
+    .head-text {
+      font-family: 'GothamNarrow-Book';
+      font-size: 22px;
+      line-height: 22px;
+      color: #393939;
+      margin: 0px;
+      text-align: center;
+    }
+    form {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .checkbox-view {
+        display: flex;
+
+        input {
+          margin: 0px;
+        }
+
+        p {
+          margin-left: 10px;
+          font-family: 'GothamNarrow-Book';
+          font-size: 14px;
+          line-height: 14px;
+          color: #191919;
+        }
+      }
+      
+      .btn-view {
+        padding: 0px 20%;
+        button {
+          margin: 15px 5px 5px 5px;
+          height: 50px;
+          width: 260px;
+          border: none;
+          background-color: #27B6F2;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0px 10px;
+          font-family: 'GothamNarrow-Book';
+          font-size: 18px;
+          color: white;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .checkout-card-started {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .checkout-card-started {
+      width: 65%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .checkout-card-started {
+      width: 75%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .checkout-card-started {
+      width: 90%;
+      height: 400px;
+      padding: 20px 30px;
+      .btn-view {
+        padding: 0;
+      }
+    }
+  }
+  .btn-already-token {
+    position: absolute;
+    bottom: 55px;
+  }
+  .blue-bg-absolute {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: #27B6F2;
+    height: 100px;
+    width: 100%;
+  }
+  .white-bg-absolute {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    height: 400px;
+    width: 100%;
+  }
+}

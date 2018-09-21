@@ -1,0 +1,175 @@
+.cards-carousel {
+  min-height: 100vh;
+  height: auto;
+  padding: 25px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEC00;
+  .cards-carousel-in {
+    min-height: 90vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .carousel-item {
+      // height: 60vh;
+    }
+
+    .carousel-indicators{
+      li {
+        background-color: #979797;
+        border: none;
+        margin: 0px;
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+      }
+      .active {
+        background-color: black;
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      .carousel-indicators {
+        display: none !important;
+      }
+    }
+
+    .title-text-xs {
+      font-family: 'GothamNarrow-Book';
+      font-size: 30px;
+      line-height: 30px;
+      color: black;
+      margin: 0px;
+      text-align: center;
+    }
+    .text-section {
+      padding: 60px 30%;
+      .text-body {
+        color: black;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      .text-section {
+        padding: 60px 10%;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .text-section {
+        padding: 60px 5%;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .text-section {
+        padding: 30px 5%;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      .text-section {
+        padding: 10px 0px;
+        width: 90%;
+      }
+    }
+    .carousel-img-item {
+      width: 100%;
+      .img-item-in {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .body-img {
+          width: 255px;
+        }
+
+        @media screen and (max-width: 400px) {
+          .img-xs {
+            width: 240px !important;
+          }
+        }
+
+        .absolute-img {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+    .input-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      // padding: 70px 0px;
+      img {
+        width: fit-content;
+        padding: 30px;
+      }
+      .button-theme {
+        width: 300px;
+        box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.16) !important;
+      }
+
+      .carousel-btn {
+        background: none;
+        border: none;
+        height: 50px;
+        background-color: #27B6F2;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 10px;
+        font-family: 'GothamNarrow-Book';
+        font-size: 18px;
+        color: white;
+        margin: 0px;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      .carousel-btn:focus {
+        outline: none;
+      }
+
+    }
+    // @media screen and (max-width: 767px) {
+    //   .input-btn {
+    //     display: block;
+    //     height: auto;
+    //     width: 100%;
+    //     padding: 20px 0px;
+    //     .button-theme {
+    //       width: 100%;
+    //     }
+    //   }
+    // }
+  }
+  @media screen and (max-width: 767px) {
+    .cards-carousel-in {
+      height: 90vh;
+      width: 90%;
+      justify-content: space-around;
+      .carousel-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 65vh;
+      }
+    }
+  }
+  // .carousel-indicators {
+  //   bottom: -40px !important;
+  // }
+  // @media screen and (max-width: 767px) {
+  //   .carousel-indicators {
+  //     bottom: -20px !important;
+  //   }
+  // }
+}

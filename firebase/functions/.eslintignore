@@ -1,0 +1,8 @@
+node_modules
+/createPayment.js
+/index.js
+/sendCodeMail.js
+/sendMePDF.js
+/PdfFF.js
+/firebase-debug.log
+/sendCodeMailSchool.js

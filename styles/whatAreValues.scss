@@ -1,0 +1,61 @@
+.what-are-values {
+  min-height: 100vh;
+  height: auto;
+  padding: 25px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5007D;
+  .get-started-in {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .text-section {
+      padding: 60px 30px;
+      width: 40%;
+    }
+    @media screen and (max-width: 992px) {
+      .text-section {
+        padding: 60px 0px;
+        width: 70%;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .text-section {
+        padding: 60px 0px;
+        width: 90%;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      .text-section {
+        padding: 20px 0px;
+      }
+    }
+    .input-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // height: 200px;
+      padding: 10px 0px;
+
+      img {
+          width: fit-content;
+          padding: 30px;
+      }
+      .button-theme {
+        width: 300px;
+        box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.16);
+      }
+    }
+  }
+
+  @media screen and (max-height: 320px) {
+    .get-started-in {
+      height: 90%;
+    }
+  }
+}

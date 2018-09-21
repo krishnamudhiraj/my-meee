@@ -1,0 +1,51 @@
+.input-theme {
+    .form-group {
+      margin-bottom: 0px;
+      .input-label {
+        font-family: 'GothamNarrow-Book';
+        font-size: 18px;
+        line-height: 18px;
+        color: #393939;
+        margin: 15px 0px;
+      }
+
+      .form-control {
+          height: 48px;
+      }
+
+      .form-control-rank {
+          height: 48px;
+          width: 48px;
+          border: 1px solid #D8D8D8;
+          border-radius: 5px;
+          background-color: transparent;
+          text-align: center;
+          color: #191919;
+          font-size: 24px;
+          font-family: 'GothamNarrow-Book';
+      }
+      
+      /* For Firefox */
+
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+      /* Webkit browsers like Safari and Chrome */
+
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+
+      .message-text {
+        font-family: 'GothamNarrow-Book';
+        font-size: 14px;
+        line-height: 14px;
+        color: #191919;
+        margin: 10px 0px;
+      }
+    }
+}

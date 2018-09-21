@@ -1,0 +1,147 @@
+.select-school {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .select-school-content {
+    position: relative;
+    width: 470px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .meee-image {
+      margin: 5px;
+    }
+    .box-text {
+      margin: 5px;
+      width: auto;
+      border-radius: 8px;
+      text-align: center;
+      padding: 5px;
+      .whichschool {
+        font-family: 'GothamNarrow-Book';
+        font-size: 20px;
+        color: #1B1B1B;
+        margin: 15px 15px;
+      }
+      .schoolname {
+        font-family: 'GothamNarrow-Book';
+        font-size: 24px;
+        color: #1B1B1B;
+        margin: 5px 15px;
+      }
+    }
+    .input-btn {
+      display: flex;
+      width: '100%';
+      .back-button {
+        margin: 5px;
+        width: 166px;
+        height: 82px;
+        border-radius: 41px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px 20px;
+        padding-bottom: 6px;
+        border: none;
+        background-color: #EEEEEE;
+        .btn-up-body {
+          display: flex;
+          align-items: center;
+          p {
+            margin: 0px 6px;
+            font-family: 'GothamNarrow-Book';
+            font-size: 20px;
+            color: #606060;
+            margin: 5px;
+          }
+        }
+        .btm-text {
+          margin: 0px 6px;
+          font-family: 'GothamNarrow-Book';
+          font-size: 14px;
+          color: #606060;
+          text-decoration: underline;
+          margin: 0px;
+        }
+      }
+      .forward-button {
+        margin: 5px;
+        width: 166px;
+        height: 82px;
+        border-radius: 41px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0px 20px;
+        padding-bottom: 6px;
+        border: none;
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+        background-color: #009EE2;
+        .btn-up-body {
+          display: flex;
+          align-items: center;
+          p {
+            margin: 0px 6px;
+            font-family: 'GothamNarrow-Book';
+            font-size: 20px;
+            color: white;
+            margin: 5px;
+          }
+        }
+        .btm-text {
+          margin: 0px 6px;
+          font-family: 'GothamNarrow-Book';
+          font-size: 14px;
+          color: white;
+          text-decoration: underline;
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .select-school {
+    .select-school-content {
+      height: 100%;
+      width: auto;
+      .input-btn {
+        .back-button {
+          width: 140px;
+          padding: 0px 14px;
+          .btn-up-body {
+            p {
+              font-size: 18px;
+            }
+          }
+          .btm-text {
+            font-size: 11px;
+            padding: 0px 10px;
+          }
+        }
+        .forward-button {
+          width: 140px;
+          padding: 0px 14px;
+          .btn-up-body {
+            p {
+              font-size: 18px;
+            }
+          }
+          .btm-text {
+            font-size: 11px;
+            padding: 0px 10px;
+          }
+        }
+      }
+    }
+  }
+}

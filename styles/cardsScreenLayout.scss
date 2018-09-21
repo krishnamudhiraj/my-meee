@@ -1,0 +1,41 @@
+.cards-screen-layout {
+  // height: 100vh;
+  .body-center {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 767px) {
+      .body-center {
+          height: auto;
+      }
+  }
+  
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .no-scrollbar {
+    overflow: hidden;
+
+    .scrollbox {
+      height: 100vh;
+      overflow-y: auto;
+      margin-right: -10px;
+    }
+  }
+  .bg-grey {
+    background-color: #fafafa;
+  }
+  .bg-shadow {
+    box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.1);
+  }
+  @media screen and (max-width: 767px) {
+    .no-scrollbar {
+      padding: 0px !important;
+    }
+  }
+}

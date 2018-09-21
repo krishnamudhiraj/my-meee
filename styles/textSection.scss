@@ -1,0 +1,59 @@
+.text-section-h1 {
+    font-family: 'GothamNarrow-Book';
+    font-size: 40px;
+    line-height: 40px;
+    color: white;
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .text-section-h1 {
+        font-size: 34px;
+        line-height: 34px;
+    }
+}
+
+.text-section-h2 {
+    font-family: 'GothamNarrow-Book';
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+    margin: 10px 0px;
+}
+
+.text-body {
+    font-family: 'GothamNarrow-Book';
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+    margin: 0px;
+}
+
+.text-section-separator {
+    margin: 20px 0px;
+}
+
+.quote-text {
+    font-family: 'HandVetica';
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    color: white;
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .quote-text {
+        font-size: 34px;
+        line-height: 34px;
+    }
+}
+
+.quote-by-text {
+    font-family: 'GothamNarrow-Book';
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+    margin: 30px 0px;
+}

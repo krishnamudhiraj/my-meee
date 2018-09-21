@@ -1,0 +1,161 @@
+.card {
+  background-color: white;
+  border-radius: 40px;
+  padding: 50px 20px 20px 20px;
+  height: 355px;
+  width: 355px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .heading {
+    font-size: 55px;
+    line-height: 55px;
+    font-family: 'Handvetica';
+    text-align: center;
+    color: white;
+  }
+  .sub-heading {
+    font-size: 18px;
+    line-height: 18px;
+    font-family: 'Handvetica';
+    text-align: center;
+    color: white;
+  }
+  .body {
+    font-size: 18px;
+    line-height: 18px;
+    font-family: 'GothamNarrow-Book';
+    text-align: center;
+    color: white;
+  }
+  .btn-theme-button {
+    .button-theme {
+      background-color: white;
+      box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+      .button-theme-text {
+        color: #393939 !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card {
+    height: 320px;
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    height: auto;
+    width: auto;
+    max-width: 320px;
+  }
+}
+
+.card-remove {
+  background-color: white;
+  border-radius: 40px;
+  height: 198px;
+  width: auto;
+  padding: 20px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .heading {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Handvetica';
+    text-align: center;
+    color: white;
+  }
+  .sub-heading {
+    font-size: 18px;
+    line-height: 18px;
+    font-family: 'Handvetica';
+    text-align: center;
+    color: white;
+  }
+  .btn-theme-button {
+    .button-theme {
+      background-color: white; //   box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+      .button-theme-text {
+        color: #393939 !important;
+      }
+    }
+  }
+}
+
+.card-top-five {
+  max-width: 365px;
+  width: 100%;
+}
+
+.rank-in-cont {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card-rank {
+    background-color: white;
+    border-radius: 40px;
+    height: 108px;
+    width: 285px;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .heading {
+      font-size: 38px;
+      line-height: 38px;
+      font-family: 'Handvetica';
+      text-align: center;
+      color: white;
+    }
+    .sub-heading {
+      font-size: 17px;
+      line-height: 17px;
+      font-family: 'Handvetica';
+      text-align: center;
+      color: white;
+    }
+    .btn-theme-button {
+      .button-theme {
+        background-color: white; //   box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+        .button-theme-text {
+          color: #393939 !important;
+        }
+      }
+    }
+  }
+  .error-card {
+    position: absolute;
+    width: 100%;
+    border-width: 1;
+    bottom: -18px;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: 'GothamNarrow-Book';
+  }
+  @media screen and (max-width: 767px) {
+    .card-rank {
+      width: 250px;
+    }
+  }
+}
+
+.card-shadow {
+  box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow-dark {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
