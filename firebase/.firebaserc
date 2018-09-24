@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "meee-cards",
-    "meee": "meee-cards"
+    "meee": "meee-cards",
+    "Meee": "meee-cards"
   }
 }

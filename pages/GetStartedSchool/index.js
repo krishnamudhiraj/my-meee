@@ -33,7 +33,7 @@ class GetStartedSchool extends Component {
           <div className="text-section">
             <p className="head-text">
               Let
-              {'\''} get started
+              {"'"}s get started
             </p>
             <p className="body-text">Enter the code you have been given:</p>
           </div>
@@ -56,12 +56,12 @@ class GetStartedSchool extends Component {
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  onSchoolSignupRequested: code => dispatch(onSchoolSignupRequested(code))
+  onSchoolSignupRequested: code => dispatch(onSchoolSignupRequested(code)),
 });
 
 const mapStateToProps = ({ getStarted }) => ({
   isLoading: get(getStarted, 'isLoading'),
-  status: get(getStarted, 'status')
+  status: get(getStarted, 'status'),
 });
 
 export default connect(

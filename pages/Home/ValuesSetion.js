@@ -23,7 +23,10 @@ class ValuesSetion extends Component {
             <div className="col-sm-5">
               <div className="btn-card-view">
                 <CardGetStarted />
-                <ButtonTransparent text="Already have a code?" onPress={'/GetStarted'} />
+                <ButtonTransparent
+                  text="Already have a code?"
+                  onPress={'/GetStarted'}
+                />
               </div>
             </div>
           </div>

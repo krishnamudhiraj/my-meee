@@ -21,7 +21,7 @@ const optionYear = [
   { value: 'year_9', label: 'Year 9' },
   { value: 'year_10', label: 'Year 10' },
   { value: 'year_11', label: 'Year 11' },
-  { value: 'year_12', label: 'Year 12' }
+  { value: 'year_12', label: 'Year 12' },
 ];
 const optionGender = [
   { value: 'male', label: 'Male' },
@@ -41,7 +41,7 @@ class UserDetails extends Component {
     this.state = {
       selectedYear: null,
       selectedGender: null,
-      selectedType: null
+      selectedType: null,
     };
     this.updateUserDetails = this.updateUserDetails.bind(this);
   }
@@ -58,11 +58,11 @@ class UserDetails extends Component {
     onUpdatingDeatils({
       year: selectedYear.label,
       gender: selectedGender.label,
-      member_type: selectedType.label
+      member_type: selectedType.label,
     }).then(() => {
       Router.push('/WhatAreValues');
     });
-  }
+  };
 
   render() {
     const { isLoading } = this.props;
@@ -85,6 +85,7 @@ class UserDetails extends Component {
                   <Select
                     value={selectedYear}
                     placeholder={'I am in...'}
+                    indicatorSeparator
                     onChange={value => this.handleChange('selectedYear', value)}
                     options={optionYear}
                   />
@@ -95,7 +96,7 @@ class UserDetails extends Component {
                 <div className="input-view-in">
                   <p className="question">
                     What
-                    {'\''}s your gender?
+                    {"'"}s your gender?
                   </p>
                   <div className="dropdown-theme">
                     <Select
@@ -112,40 +113,40 @@ class UserDetails extends Component {
 
               {selectedYear !== null &&
                 selectedGender !== null && (
-                <div className="input-view-in">
-                  <p className="question">
+                  <div className="input-view-in">
+                    <p className="question">
                       Are you a pupil, teacher, or member of staff?
-                  </p>
-                  <div className="dropdown-theme">
-                    <Select
-                      value={selectedType}
-                      placeholder={'Select from list'}
-                      onChange={value =>
-                        this.handleChange('selectedType', value)
-                      }
-                      options={optionType}
-                    />
+                    </p>
+                    <div className="dropdown-theme">
+                      <Select
+                        value={selectedType}
+                        placeholder={'Select from list'}
+                        onChange={value =>
+                          this.handleChange('selectedType', value)
+                        }
+                        options={optionType}
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </form>
 
           {selectedYear !== null &&
             selectedGender !== null &&
             selectedType !== null && (
-            <button className="next-button" onClick={this.updateUserDetails}>
-              <div className="btn-up-body">
-                <p>All done!</p>
-                <Image
-                  className="next-arrow"
-                  src={require('../../utils/assets/rightArrow.png')}
-                  responsive
-                />
-              </div>
-              <p className="btm-text">Start using the app</p>
-            </button>
-          )}
+              <button className="next-button" onClick={this.updateUserDetails}>
+                <div className="btn-up-body">
+                  <p>All done!</p>
+                  <Image
+                    className="next-arrow"
+                    src={require('../../utils/assets/rightArrow.png')}
+                    responsive
+                  />
+                </div>
+                <p className="btm-text">Start using the app</p>
+              </button>
+            )}
         </div>
       </div>
     );

@@ -15,12 +15,11 @@ exports.sendCodeMailSchool =
 /*#__PURE__*/
 function () {
   var _ref = _asyncToGenerator(function* (request, response) {
-    console.log('request.body: ', request.body);
     const msg = {
       to: request.body.email,
       from: "info@meee.global",
       subject: "Meee",
-      text: `Hi, Codes for ${request.body.school}: ${request.body.codes}` // html: "<strong>:)</strong>"
+      text: `Hi, Code for ${request.body.school} is ${request.body.codes}. This code can only be accessed by atmost ${request.body.allowed_users} users.` // html: "<strong>:)</strong>"
 
     };
     yield sendgridemail.send(msg);
