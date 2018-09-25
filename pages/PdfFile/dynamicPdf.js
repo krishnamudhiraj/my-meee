@@ -136,7 +136,7 @@ const dynamicPdf = dynamic({
         <Text style={styles.nameTitle}>Name: {myTopFiveCardsRanking.name}</Text>
         <Text style={styles.nameTitle}>Date: {myTopFiveCardsRanking.date}</Text>
         <Text style={styles.noteText}>
-              Thank you for completing the Meee Values Cards text. Here are your
+              Thank you for completing the Meee Values Cards Test. Here are your
               5 Values.
         </Text>
         <Text style={styles.noteText}>

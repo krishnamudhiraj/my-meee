@@ -56,7 +56,7 @@ class UserDetails extends Component {
     const { onUpdatingDeatils } = this.props;
     const { selectedYear, selectedGender, selectedType } = this.state;
     onUpdatingDeatils({
-      year: selectedYear.label,
+      year: selectedYear ? selectedYear.label : null,
       gender: selectedGender.label,
       member_type: selectedType.label,
     }).then(() => {
@@ -67,7 +67,6 @@ class UserDetails extends Component {
   render() {
     const { isLoading } = this.props;
     const { selectedYear, selectedGender, selectedType } = this.state;
-
     return (
       <div className="user-deatils">
         {isLoading && <Loader />}
@@ -80,51 +79,52 @@ class UserDetails extends Component {
           <form>
             <div className="input-view">
               <div className="input-view-in">
-                <p className="question">Which year are you in?</p>
+                <p className="question">
+                  What
+                  {"'"}s your gender?
+                </p>
                 <div className="dropdown-theme">
                   <Select
-                    value={selectedYear}
-                    placeholder={'I am in...'}
-                    indicatorSeparator
-                    onChange={value => this.handleChange('selectedYear', value)}
-                    options={optionYear}
+                    value={selectedGender}
+                    placeholder={'Select from list'}
+                    onChange={value =>
+                      this.handleChange('selectedGender', value)
+                    }
+                    options={optionGender}
                   />
                 </div>
               </div>
-
-              {selectedYear !== null && (
+              {selectedGender !== null && (
                 <div className="input-view-in">
                   <p className="question">
-                    What
-                    {"'"}s your gender?
+                    Are you a pupil, teacher, or member of staff?
                   </p>
                   <div className="dropdown-theme">
                     <Select
-                      value={selectedGender}
+                      value={selectedType}
                       placeholder={'Select from list'}
                       onChange={value =>
-                        this.handleChange('selectedGender', value)
+                        this.handleChange('selectedType', value)
                       }
-                      options={optionGender}
+                      options={optionType}
                     />
                   </div>
                 </div>
               )}
-
-              {selectedYear !== null &&
-                selectedGender !== null && (
+              {selectedGender !== null &&
+                selectedType !== null &&
+                selectedType.value === 'pupil' && (
                   <div className="input-view-in">
-                    <p className="question">
-                      Are you a pupil, teacher, or member of staff?
-                    </p>
+                    <p className="question">Which year are you in?</p>
                     <div className="dropdown-theme">
                       <Select
-                        value={selectedType}
-                        placeholder={'Select from list'}
+                        value={selectedYear}
+                        placeholder={'I am in...'}
+                        indicatorSeparator
                         onChange={value =>
-                          this.handleChange('selectedType', value)
+                          this.handleChange('selectedYear', value)
                         }
-                        options={optionType}
+                        options={optionYear}
                       />
                     </div>
                   </div>
@@ -132,21 +132,23 @@ class UserDetails extends Component {
             </div>
           </form>
 
-          {selectedYear !== null &&
-            selectedGender !== null &&
-            selectedType !== null && (
-              <button className="next-button" onClick={this.updateUserDetails}>
-                <div className="btn-up-body">
-                  <p>All done!</p>
-                  <Image
-                    className="next-arrow"
-                    src={require('../../utils/assets/rightArrow.png')}
-                    responsive
-                  />
-                </div>
-                <p className="btm-text">Start using the app</p>
-              </button>
-            )}
+          {((selectedGender !== null &&
+            (selectedType !== null && selectedType.value === 'teacher')) ||
+            (selectedGender !== null &&
+              (selectedType !== null && selectedType.value === 'pupil') &&
+              selectedYear !== null)) && (
+            <button className="next-button" onClick={this.updateUserDetails}>
+              <div className="btn-up-body">
+                <p>All done!</p>
+                <Image
+                  className="next-arrow"
+                  src={require('../../utils/assets/rightArrow.png')}
+                  responsive
+                />
+              </div>
+              <p className="btm-text">Start using the app</p>
+            </button>
+          )}
         </div>
       </div>
     );

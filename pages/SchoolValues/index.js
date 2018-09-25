@@ -33,17 +33,19 @@ class SchoolValues extends Component {
             </p>
           </div>
 
-          <div className="box-text">
-            <p className="text-values-body">
+          <div className="card-get-started1">
+            <p className="head-text">
               What matters to you? Choose the values that resonate with you to
               begin your exciting new journey
             </p>
-          </div>
-
-          <div className="input-btn">
-            <button onClick={() => Router.push('/LoginIntro')}>
-              Get started with the MeeeValues Cards
-            </button>
+            <div className="input-btn">
+              <button
+                className="startbtn"
+                onClick={() => Router.push('/GetStartedSchool')}
+              >
+                Get started with the Meee Values Cards
+              </button>
+            </div>
           </div>
         </div>
       </div>
