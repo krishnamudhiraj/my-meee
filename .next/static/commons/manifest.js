@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4951b5bf9b6083cfd22a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "add078f5f3cccec1cc16"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_app.js","2":"bundles/pages/_document.js","3":"bundles/pages/_error.js","5":"bundles/pages/GetStartedSchool.js","6":"bundles/pages/index.js","7":"bundles/pages/LoginIntro.js","8":"bundles/pages/School.js","9":"bundles/pages/SchoolValues.js"}[chunkId]||chunkId) + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_app.js","2":"bundles/pages/_document.js","3":"bundles/pages/_error.js","6":"bundles/pages/UserDetails.js","7":"bundles/pages/WhatAreValues.js"}[chunkId]||chunkId) + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {

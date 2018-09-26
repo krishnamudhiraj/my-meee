@@ -67,6 +67,7 @@ class UserDetails extends Component {
   render() {
     const { isLoading } = this.props;
     const { selectedYear, selectedGender, selectedType } = this.state;
+    console.log(selectedType, '@@@@@@@@@@@@@@@@@@@@@@@');
     return (
       <div className="user-deatils">
         {isLoading && <Loader />}
@@ -133,7 +134,9 @@ class UserDetails extends Component {
           </form>
 
           {((selectedGender !== null &&
-            (selectedType !== null && selectedType.value === 'teacher')) ||
+            (selectedType !== null &&
+              (selectedType.value === 'teacher' ||
+                selectedType.value === 'member_of_staff'))) ||
             (selectedGender !== null &&
               (selectedType !== null && selectedType.value === 'pupil') &&
               selectedYear !== null)) && (
