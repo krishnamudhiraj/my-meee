@@ -16,13 +16,13 @@ class OrderCards extends Component {
     this.state = {
       warningMessage: '',
       maxCount: props.myTopFiveCards.length,
-      ranks: []
+      ranks: [],
     };
     this.onRankChange = this.onRankChange.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
   }
 
-  onRankChange = (rankObject) => {
+  onRankChange = rankObject => {
     const { ranks } = this.state;
     let flag = true;
     ranks.forEach(element => {
@@ -32,10 +32,13 @@ class OrderCards extends Component {
       }
     });
     if (flag) this.setState({ ranks: ranks.concat(rankObject) });
-  }
+  };
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.isLoading === false && nextProps.myTopFiveCardsRanking !== []) {
+    if (
+      nextProps.isLoading === false &&
+      nextProps.myTopFiveCardsRanking !== []
+    ) {
       Router.push('/DownloadPDF');
     }
   }
@@ -62,11 +65,12 @@ class OrderCards extends Component {
         this.setState({ warningMessage: '' });
       }, 2000);
     }
-  }
+  };
 
   render() {
     const { isLoading, myTopFiveCards } = this.props;
     const { maxCount, ranks, warningMessage } = this.state;
+    // console.log(maxCount, '!!!!!!!!!!!!!!!!!!!!!');
 
     return (
       <div className="values-card">
@@ -83,7 +87,8 @@ class OrderCards extends Component {
             <FiveCardList
               titleText={{
                 title: 'My Top 5',
-                body: 'These are your Top 5 cards. To order them, just add the number in the box next to them, with 1 being the most important to you, and 5 being the least'
+                body:
+                  'These are your Top 5 cards. To order them, just add the number in the box next to them, with 1 being the most important to you, and 5 being the least',
               }}
               data={myTopFiveCards}
               bodyView={item => (
@@ -96,7 +101,10 @@ class OrderCards extends Component {
                 />
               )}
               nextButton={true}
-              nextButtonText={{ text: 'Next step', bottomText: 'Submit your ranking' }}
+              nextButtonText={{
+                text: 'Next step',
+                bottomText: 'Submit your ranking',
+              }}
               nextButtonAlign={'flex-end'}
               onNextButton={this.onNextClick}
               warning={warningMessage}
@@ -110,7 +118,7 @@ class OrderCards extends Component {
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  onCardSubmission: item => dispatch(onCardSubmission(item))
+  onCardSubmission: item => dispatch(onCardSubmission(item)),
 });
 
 const mapStateToProps = ({ valueCards }) => ({
@@ -119,7 +127,9 @@ const mapStateToProps = ({ valueCards }) => ({
   myTopFiveCardsRanking: get(valueCards, 'myTopFiveCardsRanking'),
 });
 
-export default withAuth(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(OrderCards));
+export default withAuth(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(OrderCards)
+);

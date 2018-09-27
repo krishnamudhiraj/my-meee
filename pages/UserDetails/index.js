@@ -67,7 +67,6 @@ class UserDetails extends Component {
   render() {
     const { isLoading } = this.props;
     const { selectedYear, selectedGender, selectedType } = this.state;
-    console.log(selectedType, '@@@@@@@@@@@@@@@@@@@@@@@');
     return (
       <div className="user-deatils">
         {isLoading && <Loader />}
