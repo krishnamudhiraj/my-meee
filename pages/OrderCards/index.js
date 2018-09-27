@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { get, indexOf } from 'lodash';
+import _ from 'lodash';
 import { onCardSubmission } from '../../redux/reducers/valueCards/actions';
 import CardsScreenLayout from '../../components/CardsScreenLayout';
 import CardsScreenHeader from '../../components/CardsScreenHeader';
@@ -46,31 +47,41 @@ class OrderCards extends Component {
   onNextClick = () => {
     const { ranks, maxCount } = this.state;
     const { onCardSubmission } = this.props;
-
     let nextVisible = true;
-    if (ranks.length === maxCount) {
-      ranks.forEach(element => {
-        if (element.rank === '') {
-          nextVisible = false;
-        }
-      });
-    } else {
-      nextVisible = false;
-    }
-    if (nextVisible) {
-      onCardSubmission(ranks);
-    } else {
+    let rankConf = [];
+    _.map(ranks, item => {
+      rankConf.push(item.rank);
+    });
+    if (_.uniq(rankConf).length !== rankConf.length) {
       this.setState({ warningMessage: 'Please order all the cards.' });
       setTimeout(() => {
         this.setState({ warningMessage: '' });
       }, 2000);
+    } else {
+      if (ranks.length === maxCount) {
+        ranks.forEach(element => {
+          if (element.rank === '') {
+            nextVisible = false;
+          }
+        });
+      } else {
+        nextVisible = false;
+      }
+
+      if (nextVisible) {
+        onCardSubmission(ranks);
+      } else {
+        this.setState({ warningMessage: 'Please order all the cards.' });
+        setTimeout(() => {
+          this.setState({ warningMessage: '' });
+        }, 2000);
+      }
     }
   };
 
   render() {
     const { isLoading, myTopFiveCards } = this.props;
     const { maxCount, ranks, warningMessage } = this.state;
-    // console.log(maxCount, '!!!!!!!!!!!!!!!!!!!!!');
 
     return (
       <div className="values-card">

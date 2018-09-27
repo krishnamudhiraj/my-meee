@@ -25,7 +25,6 @@ export default class CardRank extends Component {
     if (optionRanks.length === 0) {
       for (let index = 1; index <= maxCount; index++) {
         optionRanks.push({ value: index, label: index });
-        ranksArray.push(null);
       }
     }
   }
@@ -39,24 +38,8 @@ export default class CardRank extends Component {
     message = '';
     let repeatFlag = false;
 
-    if (ranksArray.length !== 0 && _.includes(ranksArray, rank)) {
-      this.setState({
-        errorMessage: "You can't set same rank for two cards.",
-        redflag: true,
-      });
-
-      setTimeout(() => {
-        this.setState({
-          errorMessage: '',
-        });
-      }, 2000);
-    } else {
-      ranksArray[data.card_no - 1] = rank;
-    }
-
-    if (!_.includes(ranksArray, null)) {
-      ranksArray[data.card_no - 1] = rank;
-      if (_.uniq(ranksArray).length !== ranksArray.length) {
+    if (ranksArray.length === maxCount) {
+      if (_.includes(ranksArray, rank)) {
         this.setState({
           errorMessage: "You can't set same rank for two cards.",
           redflag: true,
@@ -68,6 +51,27 @@ export default class CardRank extends Component {
           });
         }, 2000);
       }
+    }
+
+    if (ranksArray.length === 0) ranksArray.push(rank);
+    if (
+      ranksArray.length !== 1 &&
+      _.includes(ranksArray, rank) &&
+      ranksArray.length < maxCount
+    ) {
+      console.log('HII');
+      this.setState({
+        errorMessage: "You can't set same rank for two cards.",
+        redflag: true,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          errorMessage: '',
+        });
+      }, 2000);
+    } else {
+      if (!_.includes(ranksArray, rank)) ranksArray.push(rank);
     }
   };
 
