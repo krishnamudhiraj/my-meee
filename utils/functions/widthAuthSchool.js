@@ -18,7 +18,7 @@ export default function withAuth(SubComponent) {
     constructor(props) {
       super(props);
       this.state = {
-        isLoading: true
+        isLoading: true,
       };
     }
 
@@ -34,7 +34,7 @@ export default function withAuth(SubComponent) {
   }
 
   const mapStateToProps = ({ admin }) => ({
-    isAuthorised: get(admin, 'isAuthorised', false)
+    isAuthorised: get(admin, 'isAuthorised', false),
   });
 
   return connect(

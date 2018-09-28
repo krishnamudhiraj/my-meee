@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { get } from 'lodash';
-import { adminAuth } from '../../redux/reducers/admin/actions';
+import { adminAuth, adminAuthReset } from '../../redux/reducers/admin/actions';
 import { Image } from 'react-bootstrap';
 import Loader from '../../components/Loader';
 import '../../styles/userDetails.scss';
@@ -11,7 +11,7 @@ class Admin extends Component {
   constructor() {
     super();
     this.state = {
-      authorised: false
+      authorised: false,
     };
     this.authenticateAdmin = this.authenticateAdmin.bind(this);
   }
@@ -23,6 +23,10 @@ class Admin extends Component {
     this.authenticateAdmin({ email, password });
   };
 
+  async authResetAdmin() {
+    const { adminAuthReset } = this.props;
+    await adminAuthReset();
+  }
   async authenticateAdmin(auth) {
     const { adminAuth } = this.props;
     const flag = await adminAuth(auth);
@@ -33,7 +37,7 @@ class Admin extends Component {
   }
 
   render() {
-    const { isLoading, message } = this.props;
+    const { isLoading, message, isAuthorised } = this.props;
     const { authorised } = this.state;
 
     return (
@@ -45,46 +49,72 @@ class Admin extends Component {
             src={require('../../utils/assets/meeLogo2.png')}
             responsive
           />
-          {!authorised && <form onSubmit={this.handleSubmit}>
-            <div className="input-view" style={{ paddingTop: 45, paddingBottom: 45 }}>
-              <div className="input-view-in">
-                <p className="question">Email (administrator): </p>
-                <input
-                  type="email"
-                  name="email_input"
-                  className="form-control"
-                  placeholder="test@email.com"
-                  required
-                />
+          {!isAuthorised && (
+            <form onSubmit={this.handleSubmit}>
+              <div
+                className="input-view"
+                style={{ paddingTop: 45, paddingBottom: 45 }}
+              >
+                <div className="input-view-in">
+                  <p className="question">Email (administrator): </p>
+                  <input
+                    type="email"
+                    name="email_input"
+                    className="form-control"
+                    placeholder="test@email.com"
+                    required
+                  />
+                </div>
+
+                <div className="input-view-in">
+                  <p className="question">Password: </p>
+                  <input
+                    type="password"
+                    name="password_input"
+                    className="form-control"
+                    placeholder="********"
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="input-view-in">
-                <p className="question">Password: </p>
-                <input
-                  type="password"
-                  name="password_input"
-                  className="form-control"
-                  placeholder="********"
-                  required
-                />
+              <div className="btn-view">
+                <button className="next-button">
+                  Let
+                  {"'"}s Go!
+                </button>
+              </div>
+            </form>
+          )}
+
+          {!isAuthorised && <p className="code-generation-info">{message}</p>}
+
+          {isAuthorised && (
+            <div>
+              <div className="btn-view admin-btn">
+                <button
+                  className="next-button"
+                  onClick={() => Router.push('/GenerateCodes')}
+                >
+                  Generate Codes for School
+                </button>
+                <button
+                  className="next-button"
+                  onClick={() => Router.push('/SchoolData')}
+                >
+                  View School Data
+                </button>
+              </div>
+              <div className="btn-view admin-btn">
+                <button
+                  className="logout-button"
+                  onClick={() => this.authResetAdmin()}
+                >
+                  Logout
+                </button>
               </div>
             </div>
-
-            <div className="btn-view">
-              <button className="next-button">Let{'\''}s Go!</button>
-            </div>
-          </form>}
-
-          {!authorised && <p className="code-generation-info">{message}</p>}
-
-          {authorised && <div className="btn-view admin-btn">
-            <button className="next-button" onClick={() => Router.push('/GenerateCodes')}>
-              Generate Codes for School
-            </button>
-            <button className="next-button" onClick={() => Router.push('/SchoolData')}>
-              View School Data
-            </button>
-          </div>}
+          )}
         </div>
       </div>
     );
@@ -93,13 +123,14 @@ class Admin extends Component {
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  adminAuth: email => dispatch(adminAuth(email))
+  adminAuth: email => dispatch(adminAuth(email)),
+  adminAuthReset: () => dispatch(adminAuthReset()),
 });
 
 const mapStateToProps = ({ admin }) => ({
   isLoading: get(admin, 'isLoading'),
   message: get(admin, 'message'),
-  isAuthorised: get(admin, 'isAuthorised')
+  isAuthorised: get(admin, 'isAuthorised'),
 });
 
 export default connect(

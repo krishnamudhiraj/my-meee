@@ -17,6 +17,7 @@ export default class CardRank extends Component {
     this.state = {
       errorMessage: '',
       redflag: false,
+      cardRanks: [],
     };
     this.inputRankChange = this.inputRankChange.bind(this);
   }
@@ -29,56 +30,38 @@ export default class CardRank extends Component {
     }
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { ranks } = nextProps;
+    this.setState({
+      cardRanks: [...[], ...ranks],
+    });
+  }
+
   inputRankChange = ev => {
     const { maxCount, onRankChange, data, ranks } = this.props;
     const rank = ev.value;
-
     let message = '';
     onRankChange({ cardNumber: data.card_no, rank, data });
-    message = '';
-    let repeatFlag = false;
-
-    if (ranksArray.length === maxCount) {
-      if (_.includes(ranksArray, rank)) {
+    setTimeout(() => {
+      let rankConf = [];
+      _.map(this.state.cardRanks, item => {
+        rankConf.push(item.rank);
+      });
+      if (_.uniq(rankConf).length !== rankConf.length) {
         this.setState({
           errorMessage: "You can't set same rank for two cards.",
-          redflag: true,
         });
-
-        setTimeout(() => {
-          this.setState({
-            errorMessage: '',
-          });
-        }, 2000);
-      }
-    }
-
-    if (ranksArray.length === 0) ranksArray.push(rank);
-    if (
-      ranksArray.length !== 1 &&
-      _.includes(ranksArray, rank) &&
-      ranksArray.length < maxCount
-    ) {
-      console.log('HII');
-      this.setState({
-        errorMessage: "You can't set same rank for two cards.",
-        redflag: true,
-      });
-
-      setTimeout(() => {
+      } else {
         this.setState({
           errorMessage: '',
         });
-      }, 2000);
-    } else {
-      if (!_.includes(ranksArray, rank)) ranksArray.push(rank);
-    }
+      }
+    }, 500);
   };
 
   render() {
-    const { data } = this.props;
-    const { errorMessage, redFlag } = this.state;
-    const { maxCount, onRankChange, ranks } = this.props;
+    const { data, maxCount, onRankChange, ranks } = this.props;
+    const { errorMessage, redFlag, cardRanks } = this.state;
     const backgroundGradientColors =
       data.color === 'blue'
         ? backgroundGradient[0]
@@ -102,6 +85,7 @@ export default class CardRank extends Component {
         </div>
         <Select
           placeholder={'#'}
+          index
           options={optionRanks}
           onChange={value => this.inputRankChange(value)}
         />

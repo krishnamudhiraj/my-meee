@@ -81,8 +81,7 @@ class OrderCards extends Component {
 
   render() {
     const { isLoading, myTopFiveCards } = this.props;
-    const { maxCount, ranks, warningMessage } = this.state;
-
+    const { maxCount, ranks, warningMessage, errorMessage } = this.state;
     return (
       <div className="values-card">
         {isLoading && <Loader bg loadingText={'Saving your Cards...'} />}

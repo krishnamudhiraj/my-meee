@@ -18526,6 +18526,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         email: action.email
       });
 
+    case __WEBPACK_IMPORTED_MODULE_1__types__["d" /* ON_AUTHORISATION_RESET */]:
+      return _objectSpread({}, state, {
+        isAuthorised: false,
+        email: null
+      });
+
     case __WEBPACK_IMPORTED_MODULE_1__types__["b" /* ON_AUTHORISATION_FAILED */]:
       return _objectSpread({}, state, {
         isLoading: false,
@@ -18548,9 +18554,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ON_AUTHORISATION_REQUESTED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ON_AUTHORISATION_COMPLETED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ON_AUTHORISATION_FAILED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ON_AUTHORISATION_RESET; });
 var ON_AUTHORISATION_REQUESTED = 'ON_AUTHORISATION_REQUESTED';
 var ON_AUTHORISATION_COMPLETED = 'ON_AUTHORISATION_COMPLETED';
 var ON_AUTHORISATION_FAILED = 'ON_AUTHORISATION_FAILED';
+var ON_AUTHORISATION_RESET = 'ON_AUTHORISATION_RESET';
 
 /***/ }),
 
@@ -19097,8 +19105,8 @@ var configureStore = function configureStore() {
 
       var persistConfig = {
         key: 'nextjs',
-        storage: storage,
-        blacklist: ['admin', 'schoolData']
+        storage: storage // blacklist: ['schoolData'],
+
       };
       var persistedReducer = persistReducer(persistConfig, reducers);
       var store = makeConfiguredStore(persistedReducer, initialState, compose(applyMiddleware(thunk)));
@@ -19119,8 +19127,8 @@ var configureStore = function configureStore() {
 
       var _persistConfig = {
         key: 'nextjs',
-        storage: _storage,
-        blacklist: ['admin', 'schoolData']
+        storage: _storage // blacklist: ['schoolData'],
+
       };
 
       var _persistedReducer = _persistReducer(_persistConfig, __WEBPACK_IMPORTED_MODULE_3__reducers__["a" /* default */]);
