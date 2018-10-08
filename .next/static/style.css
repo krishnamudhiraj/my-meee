@@ -58,115 +58,87 @@
       font-size: 20px;
       color: #fffff1;
       text-align: center; }
-.user-deatils {
+.download-pdf {
+  background-color: #009EE2;
   min-height: 100vh;
   height: auto;
+  padding: 25px 0px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
-  .user-deatils .user-deatils-content {
-    min-height: 100vh;
-    height: auto;
-    padding-top: 6%;
-    overflow-y: auto;
+  align-items: center;
+  justify-content: center; }
+  .download-pdf .content-body {
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    .user-deatils .user-deatils-content .meee-image {
-      margin: 5px; }
-    .user-deatils .user-deatils-content form {
-      width: 345px; }
-      .user-deatils .user-deatils-content form .input-view {
-        margin: 25px 5px;
-        width: auto;
-        border-radius: 8px;
-        padding: 5px; }
-        .user-deatils .user-deatils-content form .input-view .input-view-in {
-          padding: 5px 0px; }
-          .user-deatils .user-deatils-content form .input-view .input-view-in .question {
-            font-family: 'GothamNarrow-Book';
-            font-size: 20px;
-            color: #1D1D1D;
-            margin: 15px 15px; }
-          .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i {
-            margin: 0px 10px;
-            font-family: 'GothamNarrow-Book';
-            font-size: 18px;
-            color: #393939;
-            border-bottom: 1px splid #000; }
-            .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-bl6clz:focus {
-              outline: none;
-              background-color: 'red'; }
-            .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-1aya2g8 {
-              cursor: pointer;
-              background-color: white;
-              border-radius: 20px;
-              padding: 0px 5px !important;
-              border-color: #D0D0D0 !important; }
-              .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-1aya2g8 .css-d8oujb {
-                display: none; }
-            .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-1aya2g8:focus {
-              outline: none; }
-            .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-2o5izw {
-              outline: none;
-              border-radius: 20px;
-              padding: 0px 5px !important;
-              box-shadow: none !important; }
-            .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i .css-2o5izw:hover {
-              outline: none;
-              box-shadow: none !important; }
-          .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme div {
-            background: white !important;
-            color: #393939;
-            border-radius: 20px; }
-          .user-deatils .user-deatils-content form .input-view .input-view-in .dropdown-theme .css-10nd86i:focus {
-            outline: none; }
-    .user-deatils .user-deatils-content .next-button {
-      margin: 5px;
-      width: 166px;
-      height: 82px;
-      border-radius: 41px;
+    align-items: center;
+    justify-content: space-around;
+    width: 476px;
+    height: 80%; }
+    .download-pdf .content-body .text-area {
+      padding: 25px 0px; }
+      .download-pdf .content-body .text-area .title {
+        font-family: 'GothamNarrow-Book';
+        font-size: 40px;
+        color: white;
+        margin: 0px;
+        text-align: center; }
+      .download-pdf .content-body .text-area .body-text {
+        font-family: 'GothamNarrow-Book';
+        font-size: 20px;
+        line-height: 25px;
+        color: white;
+        margin: 0px;
+        text-align: center;
+        margin: 15px; }
+    .download-pdf .content-body .button-area {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      padding: 0px 20px;
-      padding-bottom: 6px;
-      border: none;
-      box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
-      background-color: #009EE2; }
-      .user-deatils .user-deatils-content .next-button .btn-up-body {
+      align-items: center;
+      justify-content: center; }
+      .download-pdf .content-body .button-area button:focus {
+        outline: none; }
+      .download-pdf .content-body .button-area .button-theme {
+        height: 59px;
+        width: 305px;
+        background-color: white;
+        border-radius: 50px;
         display: flex;
-        align-items: center; }
-        .user-deatils .user-deatils-content .next-button .btn-up-body p {
-          margin: 0px 6px;
-          font-family: 'GothamNarrow-Book';
-          font-size: 20px;
-          color: white;
-          margin: 5px; }
-      .user-deatils .user-deatils-content .next-button .btm-text {
-        margin: 0px 6px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.16);
+        padding: 0px 10px;
         font-family: 'GothamNarrow-Book';
-        font-size: 14px;
+        font-size: 20px;
+        color: #1b1919;
+        margin: 0px;
+        text-align: center;
+        margin: 15px; }
+      .download-pdf .content-body .button-area .button-theme:focus {
+        text-decoration: none;
+        outline: none; }
+      .download-pdf .content-body .button-area .button-theme:hover {
+        text-decoration: none;
+        outline: none; }
+      @media screen and (max-width: 767px) {
+        .download-pdf .content-body .button-area .button-theme {
+          width: auto;
+          padding: 0px 25px; } }
+      .download-pdf .content-body .button-area .btn-transparent {
+        background: none;
+        border: none;
+        font-family: 'GothamNarrow-Book';
+        font-size: 20px;
         color: white;
+        margin: 0px;
+        text-align: center;
         text-decoration: underline;
-        margin: 0px; }
-    .user-deatils .user-deatils-content .table-responsive {
-      border: 2px solid #979797;
-      border-radius: 20px;
-      padding: 10px;
-      width: 600px;
-      margin-bottom: 25px; }
-    @media screen and (max-width: 767px) {
-      .user-deatils .user-deatils-content .table-responsive {
-        width: auto; } }
+        margin: 15px; }
+  @media screen and (max-width: 767px) {
+    .download-pdf .content-body {
+      width: auto; } }
 
-@media screen and (max-width: 767px) {
-  .user-deatils .user-deatils-content {
-    width: auto;
-    justify-content: unset;
-    padding: 15px; }
-    .user-deatils .user-deatils-content form {
-      width: 305px; } }
+.pdf-cover iframe {
+  height: 100vh;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map*/
