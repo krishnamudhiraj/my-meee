@@ -16,7 +16,6 @@ export const updateUserData = (key, data) =>
 	});
 
 export const updateSchoolUserData = (key, data) =>
-	// const datas = await getData(data);
 	new Promise((resolve, reject) => {
 		db.collection('/schoolsUsers')
 			.doc(key)
@@ -35,16 +34,6 @@ export const updateSchoolUserData = (key, data) =>
 				reject(err);
 			});
 	});
-
-// async function getData(udata) {
-// 	const data = await Promise.all(
-// 		udata.map(async item => {
-// 			const response = await delete item.cardNumber;
-// 			return item;
-// 		})
-// 	);
-// 	return data;
-// }
 
 export const getCode = () => {
 	const codes = fetchCodes();

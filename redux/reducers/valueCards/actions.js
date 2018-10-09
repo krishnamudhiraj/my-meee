@@ -63,11 +63,13 @@ export const onTop5CardDeletionFromValues = item => async (dispatch, getState) =
 };
 
 export const onCardSubmission = item => async (dispatch, getState) => {
+	const datas = await getData(item);
+	console.log(datas, '@@@@@@@@@@@@@@@@@@@@@@@');
 	const { name, email } = getState().getStarted;
 	const { schoolUserKey } = getState().code;
 	const date = getCurrentDate();
 
-	const updateData = await updateSchoolUserData(schoolUserKey, item);
+	const updateData = await updateSchoolUserData(schoolUserKey, datas);
 	if (updateData) {
 		dispatch({
 			type: ON_CARDS_SUBMISSION_REQUESTED,
@@ -79,6 +81,20 @@ export const onCardSubmission = item => async (dispatch, getState) => {
 		}, 2000);
 	}
 };
+
+async function getData(udata) {
+	const data = await Promise.all(
+		udata.map(async item => {
+			await delete item.cardNumber;
+			await delete item.data.color;
+			await delete item.data.message;
+			await delete item.data.moto;
+			await delete item.data.card_no;
+			return item;
+		})
+	);
+	return data;
+}
 
 export const mailMePDF = email => async (dispatch, getState) => {
 	const myTopFiveCardsRanking = getState().valueCards.myTopFiveCardsRanking;
