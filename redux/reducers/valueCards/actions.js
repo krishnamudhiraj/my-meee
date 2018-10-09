@@ -64,7 +64,6 @@ export const onTop5CardDeletionFromValues = item => async (dispatch, getState) =
 
 export const onCardSubmission = item => async (dispatch, getState) => {
 	const datas = await getData(item);
-	console.log(datas, '@@@@@@@@@@@@@@@@@@@@@@@');
 	const { name, email } = getState().getStarted;
 	const { schoolUserKey } = getState().code;
 	const date = getCurrentDate();
@@ -88,7 +87,6 @@ async function getData(udata) {
 			await delete item.cardNumber;
 			await delete item.data.color;
 			await delete item.data.message;
-			await delete item.data.moto;
 			await delete item.data.card_no;
 			return item;
 		})
