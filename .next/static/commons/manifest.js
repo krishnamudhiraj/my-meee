@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c3a23a3efea1995f3b28"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cf56e70ec7b5a8ccf71b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_app.js","2":"bundles/pages/_document.js","3":"bundles/pages/_error.js","7":"chunks/_react_pdf_renderer_5f1484e51e353073c95b79d50391edfa","8":"bundles/pages/PdfFile.js"}[chunkId]||chunkId) + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_app.js","2":"bundles/pages/_document.js","3":"bundles/pages/_error.js","6":"bundles/pages/Admin.js","7":"bundles/pages/SchoolData.js"}[chunkId]||chunkId) + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
