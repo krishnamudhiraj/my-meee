@@ -20,7 +20,7 @@
     "firebase": "^5.3.0",
     "firestore-react": "^0.1.5",
     "lodash": "^4.17.10",
-    "next": "^6.1.1",
+    "next": "^9.3.2",
     "next-compose-plugins": "^2.1.1",
     "next-optimized-images": "^1.4.1",
     "next-redux-wrapper": "^2.0.0",
